@@ -104,4 +104,16 @@
     font-size: 1rem;
   }
 }
-  
+.event-overview-section {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  opacity: 0;
+  transition: opacity 1s ease, transform 0.8s ease;
+  padding-top: 100px; /* Added padding to separate from header */
+}
+
+/* Optional: if you want even more separation, adjust the button section */
+.header-section {
+  margin-bottom: 60px; /* Add if you have a header container class */
+}
