@@ -76,7 +76,7 @@ const ModernAgenda = () => {
     const [expanded, setExpanded] = useState(null);
     const [currentTime, setCurrentTime] = useState('');
     const [currentSection, setCurrentSection] = useState(null);
-    
+
     // Simulate current time and highlight current section
     useEffect(() => {
         const updateCurrentTime = () => {
@@ -88,16 +88,14 @@ const ModernAgenda = () => {
             const formattedTime = `${formattedHours}:${minutes < 10 ? '0' + minutes : minutes} ${ampm}`;
             setCurrentTime(formattedTime);
 
-            // Find current section based on event times (demo purposes)
-            // In a real app, you would compare with actual times
             const times = agenda.map(item => item.time);
-            const currentIndex = Math.floor(Math.random() * agenda.length); // Simulating for demo
+            const currentIndex = Math.floor(Math.random() * agenda.length);
             setCurrentSection(currentIndex);
         };
-        
+
         updateCurrentTime();
         const interval = setInterval(updateCurrentTime, 60000);
-        
+
         return () => clearInterval(interval);
     }, []);
 
@@ -111,7 +109,7 @@ const ModernAgenda = () => {
                 <div className="row">
                     <div className="col-lg-4 mb-4 mb-lg-0">
                         <div className="sticky-top pt-4">
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8 }}
@@ -125,14 +123,14 @@ const ModernAgenda = () => {
                                 <div className="progress-container mt-4">
                                     <div className="progress-label">Event Progress</div>
                                     <div className="progress" style={{ height: '12px' }}>
-                                        <div 
-                                            className="progress-bar progress-bar-striped progress-bar-animated" 
-                                            role="progressbar" 
+                                        <div className="progress-bar reverse-animated"
+                                            role="progressbar"
                                             style={{ width: `${(currentSection / agenda.length) * 100}%` }}
-                                            aria-valuenow={(currentSection / agenda.length) * 100} 
-                                            aria-valuemin="0" 
-                                            aria-valuemax="100"
-                                        ></div>
+                                            aria-valuenow={(currentSection / agenda.length) * 100}
+                                            aria-valuemin="0"
+                                            aria-valuemax="100">
+                                        </div>
+
                                     </div>
                                 </div>
                             </motion.div>
@@ -141,14 +139,14 @@ const ModernAgenda = () => {
                     <div className="col-lg-8">
                         <div className="agenda-timeline">
                             {agenda.map((item, index) => (
-                                <motion.div 
+                                <motion.div
                                     key={index}
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     className={`agenda-item-container ${currentSection === index ? 'current-session' : ''}`}
                                 >
-                                    <div 
+                                    <div
                                         className={`agenda-item ${expanded === index ? 'expanded' : ''}`}
                                         onClick={() => toggleExpand(index)}
                                     >
@@ -165,10 +163,10 @@ const ModernAgenda = () => {
                                         <div className="agenda-content-card">
                                             <h3 className="agenda-title">{item.title}</h3>
                                             {item.speaker && (
-                                                <motion.div 
+                                                <motion.div
                                                     className="agenda-speaker mt-2"
                                                     initial={{ opacity: 0, height: 0 }}
-                                                    animate={{ 
+                                                    animate={{
                                                         opacity: expanded === index ? 1 : 0,
                                                         height: expanded === index ? 'auto' : 0
                                                     }}
