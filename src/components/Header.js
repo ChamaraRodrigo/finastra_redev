@@ -26,7 +26,7 @@ const Header = () => {
           <div className="d-none d-md-flex align-items-center gap-5">
             <nav className="nav-links">
               <a href="#overview" className="nav-link">Event Overview</a>
-              <a href="#agenda" className="nav-link">Agenda</a>
+              <a href="#agenda" className="nav-link">Agendaaa</a>
               <a href="#speakers" className="nav-link">Speakers</a>
             </nav>
             <a className="register-button" href="#register">

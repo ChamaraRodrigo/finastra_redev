@@ -117,3 +117,10 @@
 .header-section {
   margin-bottom: 60px; /* Add if you have a header container class */
 }
+.event-overview-section {
+  padding-top: 100px; /* Fixes overlap by pushing the section down */
+}
+
+.hero-section {
+  margin-bottom: 60px; /* Optional: add to the top section if it doesn't already have spacing */
+}
