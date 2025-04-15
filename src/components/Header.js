@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./css/Header.css";
 import header from "./images/header.png";
+import headerBg from "./images/header1.jpg"; 
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -17,6 +18,8 @@ const Header = () => {
 
   return (
     <header className="header-section">
+      <div className="bg-overlay"></div> {/* Background image overlay */}
+
       <div className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="container-fluid d-flex justify-content-between align-items-center p-4">
           <div className="logo-container">
@@ -44,7 +47,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile navigation menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'show' : ''}`}>
         <nav className="mobile-nav">
           <a href="#overview" onClick={() => setMobileMenuOpen(false)}>Event Overview</a>
