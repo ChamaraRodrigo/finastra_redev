@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./css/Footer.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import bootstrap icons if needed
-// import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Footer = () => {
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    const footer = footerRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          footer.classList.add("footer-visible");
+          footer.classList.remove("footer-hidden");
+        }
+      },
+      { threshold: 0 } // Trigger as soon as any part is visible
+    );
+
+    if (footer) {
+      observer.observe(footer);
+    }
+
+    return () => {
+      if (footer) observer.unobserve(footer);
+    };
+  }, []);
+
   return (
-    <footer className="custom-footer">
+    <footer ref={footerRef} className="custom-footer footer-hidden">
       <div className="container">
         <div className="row">
           <div className="col-md-6 mb-4 mb-md-0">

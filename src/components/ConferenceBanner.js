@@ -14,7 +14,7 @@ const ConferenceBanner = () => {
           }
         });
       },
-      { threshold: 0.2 } // Trigger when 20% of the element is visible
+      { threshold: 0.2 }
     );
     
     if (bannerRef.current) {
@@ -31,7 +31,7 @@ const ConferenceBanner = () => {
   return (
     <div className="conference-wrapper">
       <div ref={bannerRef} className="conference-container fade-in">
-        <div className="conference-image">
+        <div className="conference-image zoom-in">
           <img
             src={watchImg} 
             alt="Checking time"
@@ -40,16 +40,16 @@ const ConferenceBanner = () => {
         </div>
 
         <div className="conference-text">
-          <h2 className="conference-heading">
+          <h2 className="conference-heading slide-in-bottom">
             TOP REASONS WHY THIS IS THE ONLY <br />
             CONFERENCE YOU NEED TO ATTEND IN 2025
           </h2>
           <ul className="conference-list">
-            <li>💡 <strong>Learn from industry experts</strong></li>
-            <li>📈 <strong>Stay ahead of emerging trends</strong></li>
-            <li>👥 <strong>Connect with fellow banking professionals</strong></li>
-            <li>🎓 <strong>Enhance your knowledge, skills, and network</strong></li>
-            <li>💬 <strong>Share your expertise and experience with peers</strong></li>
+            <li className="fade-in-list"><strong>💡 Learn from industry experts</strong></li>
+            <li className="fade-in-list"><strong>📈 Stay ahead of emerging trends</strong></li>
+            <li className="fade-in-list"><strong>👥 Connect with fellow banking professionals</strong></li>
+            <li className="fade-in-list"><strong>🎓 Enhance your knowledge, skills, and network</strong></li>
+            <li className="fade-in-list"><strong>💬 Share your expertise and experience with peers</strong></li>
           </ul>
         </div>
       </div>
