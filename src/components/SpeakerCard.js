@@ -28,21 +28,17 @@ const SpeakerCard = ({ speaker }) => {
         </div>
 
         <div className="speaker-actions">
-          {/* <button className="btn-sessions">
-            <i className="bi bi-calendar-event"></i>
-            <span>View Sessions</span>
-          </button> */}
-            <a className="register-button" href="#Sessions">
-              <span className="register-text">View Sessions</span>
-            </a>
-            <div style={{ display: "flex", gap: "0.5rem" }}>
-              <button className="btn-social">
-                <Linkedin />
-              </button>
-              <button className="btn-social">
-                <TwitterX />
-              </button>
-            </div>
+          <a className="register-button" href="#Sessions">
+            <span className="register-text">View Sessions</span>
+          </a>
+          <div style={{ display: "flex", gap: "0.5rem" }}>
+            <button className="btn-social">
+              <Linkedin />
+            </button>
+            <button className="btn-social">
+              <TwitterX />
+            </button>
+          </div>
         </div>
       </div>
     </div>

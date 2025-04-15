@@ -39,7 +39,7 @@ const RegisterForm = () => {
 
     if (field === 'website') {
       if (!formData.website) return true;
-      const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/;
+      const urlRegex = /^(https?:\/\/)?([a-z\d-]+\.)+[a-z]{2,}(\/[^\s]*)?$/i;
       return urlRegex.test(formData.website);
     }
 
