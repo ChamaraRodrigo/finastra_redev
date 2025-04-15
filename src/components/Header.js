@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./css/Header.css";
 import header from "./images/header.png";
-import headerBg from "./images/header1.jpg"; 
+import headerBg from "./images/header1.jpg";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -11,14 +11,14 @@ const Header = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header className="header-section">
-      <div className="bg-overlay"></div> {/* Background image overlay */}
+      <div className="bg-overlay"></div>
 
       <div className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="container-fluid d-flex justify-content-between align-items-center p-4">
@@ -37,8 +37,8 @@ const Header = () => {
             </a>
           </div>
 
-          <button 
-            className="mobile-menu-toggle d-md-none" 
+          <button
+            className="mobile-menu-toggle d-md-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -60,17 +60,17 @@ const Header = () => {
         <div className="container text-center mx-auto px-4">
           <div className="blur-circle circle-1"></div>
           <div className="blur-circle circle-2"></div>
-          
+
           <p className="organizer-text">Organized By</p>
           <h1 className="finastra-text">FINASTRA</h1>
-          
+
           <div className="event-title-container">
-            <h2 className="event-title">
+            <h2 class="typewriter">
               Reimagine Banking:
               <span className="event-subtitle">Adapt. Evolve. Thrive.</span>
             </h2>
           </div>
-          
+
           <div className="event-details">
             <div className="event-detail-item">
               <span className="event-icon date-icon"></span>
@@ -85,7 +85,7 @@ const Header = () => {
               <span>The Nile Ritz-Carlton, Cairo, Egypt</span>
             </div>
           </div>
-          
+
           <a href="#register" className="cta-button">
             SECURE YOUR SPOT
           </a>

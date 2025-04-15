@@ -32,8 +32,9 @@
   background-image: url("../images/header1.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.12; /* adjust to desired transparency */
+  opacity: 0.2; /* adjust to desired transparency */
   z-index: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(24, 205, 202, 0.4)), url("../images/header1.jpg");
 }
 
 @keyframes gradientShift {
@@ -435,4 +436,118 @@
     padding: 0.875rem 2rem;
     font-size: 1rem;
   }
+}
+
+.header-content {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header-content .container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.finastra-text {
+  background: linear-gradient(90deg, #18cdca, #fff, #18cdca);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+.scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 10px); }
+}
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid #18cdca;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end 3s 3;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #18cdca; }
+}
+
+.header {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header-button:hover {
+  background-color: #fff;
+  color: #18cdca;
+  border: 2px solid #18cdca;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+}
+@keyframes bg-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.header {
+  background: linear-gradient(-45deg, #18cdca, #009688, #0f0f0f);
+  background-size: 400% 400%;
+  animation: bg-move 10s ease infinite;
 }
