@@ -64,7 +64,7 @@ Emad Shawky Habib Hanna, CDAO, Banque Misr`,
     {
         time: '01:50 PM',
         title: 'Closing Remarks',
-        speaker: 'Rudy Kawmi, Managing Director - Middle East, Africa & Asia-Pacific, Finastra Universal Banking',
+        speaker: 'Rudy Kawsi, Managing Director - Middle East, Africa & Asia-Pacific, Finastra Universal Banking',
     },
     {
         time: '02:00 PM',
